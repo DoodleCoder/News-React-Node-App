@@ -1,0 +1,197 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+	<!-- <div class="section-warp ask-me">
+		<div class="container clearfix">
+			<div class="box_icon box_warp box_no_border box_no_background" box_border="transparent" box_background="transparent" box_color="#FFF">
+				<div class="row">
+					<div class="col-md-3">
+						<h2>Welcome to Ask me</h2>
+						<p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis. Curabitur vitae velit in neque dictum blandit. Proin in iaculis neque.</p>
+						<div class="clearfix"></div>
+						<a class="color button dark_button medium" href="#">About Us</a>
+						<a class="color button dark_button medium" href="#">Join Now</a>
+					</div>
+					<div class="col-md-9">
+						<form class="form-style form-style-2">
+							<p>
+								<textarea rows="4" id="question_title" onfocus="if(this.value=='Ask any question and you be sure find your answer ?')this.value='';" onblur="if(this.value=='')this.value='Ask any question and you be sure find your answer ?';">Ask any question and you be sure find your answer ?</textarea>
+								<i class="icon-pencil"></i>
+								<span class="color button small publish-question">Ask Now</span>
+							</p>
+						</form>
+					</div>
+				</div><!End row -->
+			<!-- </div>End box_icon -->
+		<!-- </div>End container -->
+	<!-- </div>End section-warp -->
+
+			<div class="col-md-9">
+
+				<div class="tabs-warp question-tab">
+		            <ul class="tabs">
+		                <li class="tab"><a href="#" class="current">Recent Questions</a></li>
+		                <li class="tab"><a href="#">Most Responses</a></li>
+		                <li class="tab"><a href="#">Recently Answered</a></li>
+		                <li class="tab"><a href="#">Unanswered</a></li>
+		            </ul>
+		            <div class="tab-inner-warp">
+						<div class="tab-inner">
+							{% for q in questions_rq %}
+							<article class="question question-type-normal">
+								<h2>
+									<a href="/question_detail/{{ q.id }}">{{ q.question_title }}</a>
+								</h2>
+								<div class="question-type-main">
+										<i class="icon-question-sign"></i>Question
+								</div>
+								<div class="question-author">
+									{% for user in users_rq %}
+										{% for u in user %}
+											{% if u.user == q.author %}
+												<a href="#" original-title="ahmed" class="question-author-img tooltip-n"><span></span><img alt="" src="../../static/images/demo/{{ u.profilePic }}"></a>
+											{% endif %}
+										{% endfor %}
+									{% endfor %}
+								</div>
+								<div class="question-inner">
+									<div class="clearfix"></div>
+									<p class="question-desc">{{ q.question_text }}</p>
+									<div class="question-details">
+										<span class="question-answered question-answered-done"><i class="icon-ok"></i>solved</span>
+									</div>
+									<span class="question-date"><i class="icon-time"></i>{{ q.created_date }}</span>
+									<span class="question-comment"><a href="#"><i class="icon-comment"></i>{{ q.numAns }} Answers</a></span>
+									<span class="question-view"><i class="icon-user"></i>{{q.numViews}} views</span>
+									<div class="clearfix"></div>
+								</div>
+							</article>
+							{% endfor %}
+					    </div>
+					</div>
+					<div class="tab-inner-warp">
+						<div class="tab-inner">
+							{% for q in questions_ma %}
+							<article class="question question-type-normal">
+								<h2>
+									<a href="/question_detail/{{ q.id }}">{{ q.question_title }}</a>
+								</h2>
+								<div class="question-type-main">
+										<i class="icon-question-sign"></i>Question
+								</div>
+								<div class="question-author">
+									{% for user in users_ma %}
+										{% for u in user %}
+											{% if u.user == q.author %}
+												<a href="#" original-title="ahmed" class="question-author-img tooltip-n"><span></span><img alt="" src="../../static/images/demo/{{ u.profilePic }}"></a>
+											{% endif %}
+										{% endfor %}
+									{% endfor %}
+								</div>
+								<div class="question-inner">
+									<div class="clearfix"></div>
+									<p class="question-desc">{{ q.question_text }}</p>
+									<div class="question-details">
+										<span class="question-answered question-answered-done"><i class="icon-ok"></i>solved</span>
+									</div>
+									<span class="question-date"><i class="icon-time"></i>{{ q.created_date }}</span>
+									<span class="question-comment"><a href="#"><i class="icon-comment"></i>{{ q.numAns }} Answers</a></span>
+									<span class="question-view"><i class="icon-user"></i>{{q.numViews}} views</span>
+									<div class="clearfix"></div>
+								</div>
+							</article>
+							{% endfor %}
+					    </div>
+					</div>
+					<div class="tab-inner-warp">
+						<div class="tab-inner">
+							{% for q in questions_ra %}
+							<article class="question question-type-normal">
+								<h2>
+									<a href="/question_detail/{{ q.id }}">{{ q.question_title }}</a>
+								</h2>
+								<div class="question-type-main">
+										<i class="icon-question-sign"></i>Question
+								</div>
+								<div class="question-author">
+									{% for user in users_ra %}
+										{% for u in user %}
+											{% if u.user == q.author %}
+												<a href="#" original-title="ahmed" class="question-author-img tooltip-n"><span></span><img alt="" src="../../static/images/demo/{{ u.profilePic }}"></a>
+											{% endif %}
+										{% endfor %}
+									{% endfor %}
+								</div>
+								<div class="question-inner">
+									<div class="clearfix"></div>
+									<p class="question-desc">{{ q.question_text }}</p>
+									<div class="question-details">
+										<span class="question-answered question-answered-done"><i class="icon-ok"></i>solved</span>
+									</div>
+									<span class="question-date"><i class="icon-time"></i>{{ q.created_date }}</span>
+									<span class="question-comment"><a href="#"><i class="icon-comment"></i>{{ q.numAns }} Answers</a></span>
+									<span class="question-view"><i class="icon-user"></i>{{q.numViews}} views</span>
+									<div class="clearfix"></div>
+								</div>
+							</article>
+							{% endfor %}
+					    </div>
+					</div>
+					<div class="tab-inner-warp">
+						<div class="tab-inner">
+							{% for q in questions_na %}
+							<article class="question question-type-normal">
+								<h2>
+									<a href="/question_detail/{{ q.id }}">{{ q.question_title }}</a>
+								</h2>
+								<div class="question-type-main">
+										<i class="icon-question-sign"></i>Question
+								</div>
+								<div class="question-author">
+									{% for user in users_na %}
+										{% for u in user %}
+											{% if u.user == q.author %}
+												<a href="#" original-title="ahmed" class="question-author-img tooltip-n"><span></span><img alt="" src="../../static/images/demo/{{ u.profilePic }}"></a>
+											{% endif %}
+										{% endfor %}
+									{% endfor %}
+								</div>
+								<div class="question-inner">
+									<div class="clearfix"></div>
+									<p class="question-desc">{{ q.question_text }}</p>
+									<div class="question-details">
+										<span class="question-answered question-answered-done"><i class="icon-ok"></i>solved</span>
+									</div>
+									<span class="question-date"><i class="icon-time"></i>{{ q.created_date }}</span>
+									<span class="question-comment"><a href="#"><i class="icon-comment"></i>{{ q.numAns }} Answers</a></span>
+									<span class="question-view"><i class="icon-user"></i>{{q.numViews}} views</span>
+									<div class="clearfix"></div>
+								</div>
+							</article>
+							{% endfor %}
+					    </div>
+					</div>
+		        </div><!-- End page-content -->
+			</div><!-- End main -->
+{% endblock %}
+
+
+<script src="../../static/js/jquery.min.js"></script>
+<script src="../../static/js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="../../static/js/jquery.easing.1.3.min.js"></script>
+<script src="../../static/js/html5.js"></script>
+<script src="../../static/js/twitter/jquery.tweet.js"></script>
+<script src="../../static/js/jflickrfeed.min.js"></script>
+<script src="../../static/js/jquery.inview.min.js"></script>
+<script src="../../static/js/jquery.tipsy.js"></script>
+<script src="../../static/js/tabs.js"></script>
+<script src="../../static/js/jquery.flexslider.js"></script>
+<script src="../../static/js/jquery.prettyPhoto.js"></script>
+<script src="../../static/js/jquery.carouFredSel-6.2.1-packed.js"></script>
+<script src="../../static/js/jquery.scrollTo.js"></script>
+<script src="../../static/js/jquery.nav.js"></script>
+<script src="../../static/js/tags.js"></script>
+<script src="../../static/js/jquery.bxslider.min.js"></script>
+<script src="../../static/js/custom.js"></script>
