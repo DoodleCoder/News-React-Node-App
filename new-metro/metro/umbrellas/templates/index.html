@@ -1,0 +1,306 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<style type="text/css">
+	.brand {
+		max-width: 200px;
+	}
+</style>
+	<!-- Slider Five -->
+	<div class="flexslider sliders slider-five">
+		<ul class="slides">
+			<li>
+				<div class="slide-caption">
+					<div class="slide-text">
+						<!-- <span style="color: #04befc !important;">We've Got You Covered!</span> -->
+						<br />
+						<h2><a style="color: white !important;" href="#">Unlimited Colors</a></h2>
+						<a href="/brochure/" class="btn btn-primary">Learn More</a>
+					</div>
+				</div>
+				<img src="{% static 'images/homeslider2.jpg' %}" alt="Slider Image">
+			</li>
+			<li>
+				<div class="slide-caption">
+					<div class="slide-text">
+						<!-- <span style="color: #04befc !important;">We've Got You Covered!</span> -->
+						<br />
+						<h2><a style="color: white !important;" href="#">Incredible Quality</a></h2>
+						<a href="/brochure/" class="btn btn-primary">Learn More</a>
+					</div>
+				</div>
+				<img src="{% static 'images/homeslider3.jpg' %}" height="100%" alt="Slider Image">
+			</li>
+			<li>
+				<div class="slide-caption">
+					<div class="slide-text">
+						<!-- <span style="color: #04befc !important;">We've Got You Covered!</span> -->
+						<br />
+						<h2><a style="color: white !important;" href="#">Modern Designs</a></h2>
+						<a href="/brochure/" class="btn btn-primary">Learn More</a>
+					</div>
+				</div>
+				<img src="{% static 'images/homeslider1.jpg' %}" height="100%" alt="Slider Image">
+			</li>
+		</ul>
+	</div>
+
+	<!-- Intro -->
+	<section class="intro intro-2 sections">
+		<div class="row">
+			<div class="col-md-5 intro-features-wrap">
+				<div class="intro-features clearfix">
+					<div class="icon-wrap">
+						<i class="fa fa-clock-o"></i>
+					</div>
+					<div class="content">
+						<h4 class="title">Design Updates</h4>
+						<p class="detail">An update in design and pattern is carried out in regular intervals to maximize variety.</p>
+					</div>
+				</div>
+				<div class="intro-features clearfix">
+					<div class="icon-wrap">
+						<i class="fa fa-pencil"></i>
+					</div>
+					<div class="content">
+						<h4 class="title">Endless Creativity</h4>
+						<p class="detail">New patterns and designs always in making providing a huge range of products.</p>
+					</div>
+				</div>
+				<div class="intro-features clearfix">
+					<div class="icon-wrap">
+						<i class="fa fa-user"></i>
+					</div>
+					<div class="content">
+						<h4 class="title">User Friendly</h4>
+						<p class="detail">A One-Stop-Shop for all requirements of customers in products and services.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-7 intro-header-wrap">
+				<h2 class="intro-title">Our Main Brands</h2>
+				<br />
+				<div class="row">
+					<div class="col-md-6" style="max-width: 50%;background-color:">
+						<a href="/elephant/"><img src="{% static 'images/ele_logo.jpg' %}"  width="80%" height="320px"></a>
+					</div>
+					<div class="col-md-6" style="max-width: 50%;">
+						<a href="/koko/"><img src="{% static 'images/koko_logo.jpg' %}" width="80%" height="320px"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Portfolio -->
+	<section class="our-portfolio our-portfolio-3 sections">
+		<div class="container">
+			<header class="section-header">
+				<h3 class="section-sub-title">portfolio</h3>
+				<h2 class="section-title">Recent Works</h2>
+				<span class="line-two"><span></span></span>
+
+				<div class="portfolio-nav-wrapper">
+				</div>
+			</header>
+			<div class="portfolio-wrapper">
+				<div class="portfolio-carousel owl-carousel owl-theme">
+					<div class="portfolio-carousel-item">
+						<div class="portfolio-items-container row">
+							{% for i in umbs %}
+							<div class="col-xs-6 col-md-4 portfolio-post web-design branding">
+								<article class="portfolio-post-item">
+									<img src="../static/media/{{ i.pic2 }}" alt="">
+									<div class="portfolio-content-wrapper">
+										<div class="portfolio-content">
+											<h3 class="portfolio-title"><a href="/product/{{i.id}}{{b}}">{{i.fold }}{{ i.pattern}}</a></h3>
+											<span class="portfolio-cat">{{i.color}}</span>
+										</div>
+									</div>
+								</article>
+							</div>
+
+							{% endfor %}
+<!-- 							<div class="col-xs-6 col-md-4 portfolio-post logo creative">
+								<article class="portfolio-post-item">
+									<img src="{% static 'images/portfolio/p20.jpg' %}" alt="">
+									<div class="portfolio-content-wrapper">
+										<div class="portfolio-content">
+											<h3 class="portfolio-title"><a href="portfolio-single.html">Portfolio Item Name</a></h3>
+											<span class="portfolio-cat">Branding / UX Design</span>
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="col-xs-6 col-md-4 portfolio-post web-design branding">
+								<article class="portfolio-post-item">
+									<img src="{% static 'images/portfolio/p21.jpg' %}" alt="">
+									<div class="portfolio-content-wrapper">
+										<div class="portfolio-content">
+											<h3 class="portfolio-title"><a href="portfolio-single.html">Portfolio Item Name</a></h3>
+											<span class="portfolio-cat">Branding / UX Design</span>
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="col-xs-6 col-md-4 portfolio-post logo creative">
+								<article class="portfolio-post-item">
+									<img src="{% static 'images/portfolio/p22.jpg' %}" alt="">
+									<div class="portfolio-content-wrapper">
+										<div class="portfolio-content">
+											<h3 class="portfolio-title"><a href="portfolio-single.html">Portfolio Item Name</a></h3>
+											<span class="portfolio-cat">Branding / UX Design</span>
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="col-xs-6 col-md-4 portfolio-post web-design branding">
+								<article class="portfolio-post-item">
+									<img src="{% static 'images/portfolio/p23.jpg' %}" alt="">
+									<div class="portfolio-content-wrapper">
+										<div class="portfolio-content">
+											<h3 class="portfolio-title"><a href="portfolio-single.html">Portfolio Item Name</a></h3>
+											<span class="portfolio-cat">Branding / UX Design</span>
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="col-xs-6 col-md-4 portfolio-post logo creative">
+								<article class="portfolio-post-item">
+									<img src="{% static 'images/portfolio/p24.jpg' %}" alt="">
+									<div class="portfolio-content-wrapper">
+										<div class="portfolio-content">
+											<h3 class="portfolio-title"><a href="portfolio-single.html">Portfolio Item Name</a></h3>
+											<span class="portfolio-cat">Branding / UX Design</span>
+										</div>
+									</div>
+								</article>
+							</div> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Counter -->
+	<section class="counter counter-2 sections">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-6 col-sm-3">
+					<div class="counter-content text-center">
+						<h3 class="counter-digit"><span data-from="0" data-to="452" data-speed="400">452</span></h3>
+						<h4 class="counter-desc">Products</h4>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-3">
+					<div class="counter-content text-center">
+						<h3 class="counter-digit"><span data-from="0" data-to="125" data-speed="400">125</span>+</h3>
+						<h4 class="counter-desc">Clientele</h4>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-3">
+					<div class="counter-content text-center">
+						<h3 class="counter-digit"><span data-from="0" data-to="468" data-speed="400">468</span></h3>
+						<h4 class="counter-desc">Workforce</h4>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-3">
+					<div class="counter-content text-center">
+						<h3 class="counter-digit counted"><span data-from="0" data-to="554" data-speed="400">25</span>+</h3>
+						<h5 class="counter-desc">Hours</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Services -->
+	<section class="our-services our-services-3 sections section-padding">
+		<div class="container">
+			<header class="section-header text-center">
+				<h3 class="section-sub-title">services</h3>
+				<h2 class="section-title">our services</h2>
+				<span class="line-two"><span></span></span>
+			</header>
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="services-item">
+						<div class="services-img">
+							<img class="img-responsive" src="{% static 'images/features/2.png' %}" alt="Image">
+						</div>
+						<div class="services-content">
+							<h3 class="title">Awesome Support</h3>
+							<span class="line"></span>
+							<p>The service from purchasing to post-sale help surely would leave you surprised.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="services-item">
+						<div class="services-img">
+							<img class="img-responsive" src="{% static 'images/features/5.png' %}" alt="Image">
+						</div>
+						<div class="services-content">
+							<h3 class="title">Easy To Customize</h3>
+							<span class="line"></span>
+							<p>A range of customization available for the products to match your needs and outfit. </p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="services-item">
+						<div class="services-img">
+							<img class="img-responsive" src="{% static 'images/features/3.png' %}" alt="Image">
+						</div>
+						<div class="services-content">
+							<h3 class="title">Superior Quality</h3>
+							<span class="line"></span>
+							<p>We provide the best quality durable and sturdy products that are weather-proof.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="services-item">
+						<div class="services-img">
+							<img class="img-responsive" src="{% static 'images/features/6.png' %}" alt="Image">
+						</div>
+						<div class="services-content">
+							<h3 class="title">Endless Choices</h3>
+							<span class="line"></span>
+							<p>A huge range of products for you to choose from. You'll never run out of options.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="services-item">
+						<div class="services-img">
+							<img class="img-responsive" src="{% static 'images/features/21.png' %}" alt="Image">
+						</div>
+						<div class="services-content">
+							<h3 class="title">Easy Mobility</h3>
+							<span class="line"></span>
+							<p>Accepting orders from all locations across India. Distance wont ever be a problem. </p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="services-item">
+						<div class="services-img">
+							<img class="img-responsive" src="{% static 'images/features/22.png' %}" alt="Image">
+						</div>
+						<div class="services-content">
+							<h3 class="title">Value for Money</h3>
+							<span class="line"></span>
+							<p>Prices are the second thing you'll love about our products. Our products would be first.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Footer -->
+{% endblock %}

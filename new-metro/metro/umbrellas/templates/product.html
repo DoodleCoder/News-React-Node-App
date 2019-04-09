@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="container main-container portfolio-page portfolio-single-post" style="margin-top: 0px;">
+
+        <!-- Main Content -->
+        <main id="main" class="main">
+            <div class="project-slider flexslider">
+                <ul class="slides">
+                    <li><a><img src="../../static/media/{{ product.pic1 }}" style="width: 600px;margin-left: 25%;margin-top: 0px;" alt=""></a></li>
+                    <li><a><img src="../../static/media/{{ product.pic2 }}" style="width: 600px;margin-left: 25%;margin-top: 0px;" alt=""></a></li>
+                    <li><a><img src="../../static/media/{{ product.pic3 }}" style="width: 600px;margin-left: 25%;margin-top: 0px;" alt=""></a></li>
+                    <li><a><img src="../../static/media/{{ product.pic4 }}" style="width: 600px;margin-left: 25%;margin-top: 0px;" alt=""></a></li>
+                </ul>
+            </div>
+
+            <article class="portfolio-post clearfix">
+                <div class="row">
+                    <div class="col-md-8">
+                        <header class="portfolio-post-header">
+                            <h2 class="portfolio-post-title"><a href="#" rel="bookmark">{{ product.fold }} {{ product.pattern }} {{ product.color }} </a></h2>
+                        </header>
+                        <div class="entry-content clearfix">
+                            <p style="font-size: 20px;">
+                                {{ product.description }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="project-meta">
+                            <li>
+                                <h5 class="title">Brand</h5>
+                                <a>{{ brand }}</a>
+                            </li>
+                            <li>
+                                <h5 class="title">Style</h5>
+                                <span>{{ product.fold }}</span>
+                            </li>
+                            <li>
+                                <h5 class="title">DETAILS</h5>
+                                <a >{{ product.color }},</a>
+                                <a >Sturdy,</a>
+                                <a >Robust</a>
+                            </li>
+                            <li>
+                                <h5 class="title">design</h5>
+                                <span>{{ product.pattern }}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            <div class="post-navigation clearfix">
+                <a class="pull-left" href="portfolio-single.html" rel="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                <a class="pull-right" href="portfolio-single.html" rel="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            </div>
+        </main>
+    </div>
+
+{% endblock %}

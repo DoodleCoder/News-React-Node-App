@@ -1,0 +1,210 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from www.pearlthemes.com/html/antarctica/home-4.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Apr 2019 16:26:13 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Metro Umbrella Industries</title>
+
+	<!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i&amp;subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900&amp;subset=latin-ext" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'js/flexslider/flexslider.css' %}" rel="stylesheet">
+    <link href="{% static 'js/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'js/owl.carousel/assets/owl.theme.default.min.css' %}" rel="stylesheet">
+	<link href="{% static 'js/slicknav/slicknav.min.css' %}" rel="stylesheet">
+	<link href="{% static 'js/lightcase/css/lightcase.css' %}" rel="stylesheet">
+	<link href="{% static 'js/fakeLoader/fakeLoader.css' %}" rel="stylesheet">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+</head>
+<body class="home-4">
+
+<div id="fakeLoader" class="fakeLoader"></div>
+
+<!-- Page Wrapper -->
+<div class="page-wrapper">
+
+	<!-- Header -->
+	<header id="header" class="header header-four clearfix">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 hidden-xs hidden-sm">
+					<p class="tagline"></p>
+				</div>
+				<div class="col-sm-8 col-md-6">
+					<div class="site-branding">
+						<h1 class="site-title"><a href="/index/" rel="home"><img src="{% static 'images/logo.png' %}" alt="Metro Umbrella Industries"></a></h1>
+					</div>
+				</div>
+				<div class="col-sm-4 col-md-3">
+					<span class="follow-us">
+						<a href="http://www.facebook.com/metroumbrella"><i class="fa fa-facebook"></i></a>
+						<a href="http://www.twitter.com/MetroUmbrella"><i class="fa fa-twitter"></i></a>
+						<a href="http://www.instagram.com/metroumbrella"><i class="fa fa-instagram"></i></a>
+						<a href="https://www.linkedin.com/in/bharat-kataria-b7b08b31/"><i class="fa fa-linkedin"></i></a>
+				 	</span>
+				</div>
+			</div>
+		</div>
+		<div class="header-menu-wrap">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-6 col-md-8 col-lg-9">
+						<div class="navigation-top clearfix">
+							<nav id="site-navigation" class="main-navigation">
+								<div class="menu-primary-container">
+									<ul class="menu-primary clearfix">
+										<li class="menu-item-has-children current-menu-item">
+											<a href="/index/">Home</a>
+										</li>
+										<li class="menu-item-has-children">
+											<a href="#">Products</a>
+											<ul class="sub-menu">
+												<li><a href="/elephant/">Elephant</a></li>
+												<li><a href="/koko/">KoKo</a></li>
+											</ul>
+										</li>
+										<li><a href="/contact/">Contact</a></li>
+									</ul>
+								</div>
+							</nav>
+						</div>
+					</div>
+					<div class="col-xs-6 col-md-4 col-lg-3">
+						<form action="/search/" method="POST" class="search-form">
+						{% csrf_token %}
+							<input type="text" name="s" id="s" value="" placeholder="Search">
+							<input type="submit" id="search-submit" value="">
+							<i class="fa fa-search" aria-hidden="true"></i>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	{% block content %}
+    {% endblock %}
+
+   	<!-- Call to Action -->
+	<div class="call-to-action">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					<p>Like what you see? Contact us now and try everything.</p>
+				</div>
+				<div class="col-md-4">
+					<a class="btn" href="/contact/">Contact</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer" class="footer">
+		<div class="container">
+			<aside class="row footer-widgets">
+				<div class="widget-column col-sm-6 col-md-3">
+					<section class="widget widget_text">
+						<h2 class="widget-title">&nbsp;</h2>
+						<div class="textwidget">
+							<div class="footer-logo-widget">
+								<a href="index.html"><img src="{% static 'images/footer-logo.png' %}" alt=""></a>
+							</div>
+						</div>
+					</section>
+				</div>
+
+				<div class="widget-column col-sm-6 col-md-3">
+					<section class="widget widget_nav_menu">
+						<h2 class="widget-title">Quick Links</h2>
+						<ul>
+							<li><a href="/index/">Home</a></li>
+							<li><a href="/elephant/">Elephant</a></li>
+							<li><a href="/koko/">KoKo</a></li>
+							<li><a href="/contact/">Contact</a></li>
+						</ul>
+					</section>
+				</div>
+
+				<div class="clearfix visible-sm"></div>
+
+				<div class="widget-column col-sm-6 col-md-3">
+					<section class="widget widget_featured_posts">
+						<h2 class="widget-title">Our Brands</h2>
+						<ul>
+							<li>
+								<div class="post-thumb">
+									<a href="/elephant/"><img src="{% static 'images/ele_logo.jpg' %}" width="80px" alt="#"></a>
+								</div>
+								<div class="post-content">
+									<h2 class="post-title"><a href="/elephant/">Elephant</a></h2>
+								</div>
+							</li>
+							<li>
+								<div class="post-thumb">
+									<a href="/koko/"><img src="{% static 'images/koko_logo.jpg' %}" width="80px" alt="#"></a>
+								</div>
+								<div class="post-content">
+									<h2 class="post-title"><a href="/koko/">KoKo</a></h2>
+								</div>
+							</li>
+						</ul>
+					</section>
+				</div>
+
+				<div class="widget-column col-sm-6 col-md-3">
+					<section class="widget widget_twitter">
+						<h2 class="widget-title">My Team</h2>
+						<ul>
+							<li>
+								<p>
+									<a href="#">@BharatKataria,</a> Owner - Sole Proprietor
+									<span class="tweet-time">20+ years of service</span>
+								</p>
+							</li>
+							<li>
+								<p>
+									<a href="#">@AshaKataria,</a> Managing Head
+									<span class="tweet-time">5+ years of service</span>
+								</p>
+							</li>
+						</ul>
+					</section>
+				</div>
+			</aside>
+		</div>
+
+		<div class="sub-footer text-center">
+			<div class="container">
+				<p>Copyrights © <a href="/index/" title="Metro Umbrella Industries">Metro Umbrella Industries</a> 2019. - All rights reserved.</p>
+			</div>
+		</div>
+	</footer>
+</div>
+
+<!-- Required Plugins and Scripts -->
+<script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+<script src="{% static 'js/jquery-migrate.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/flexslider/jquery.flexslider-min.js' %}"></script>
+<script src="{% static 'js/owl.carousel/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/jquery-countTo/jquery.countTo.js' %}"></script>
+<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'js/slicknav/jquery.slicknav.min.js' %}"></script>
+<script src="{% static 'js/lightcase/vendor/jQuery/jquery.events.touch.js' %}"></script>
+<script src="{% static 'js/lightcase/js/lightcase.js' %}"></script>
+<script src="{% static 'js/fakeLoader/fakeLoader.min.js' %}"></script>
+<script src="{% static 'js/scripts.js' %}"></script>
+</body>
+
+<!-- Mirrored from www.pearlthemes.com/html/antarctica/home-4.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Apr 2019 16:27:12 GMT -->
+</html>

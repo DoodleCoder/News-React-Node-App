@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="sub-header large" style="background-image: url('images/portfolio-sub-header-bg.jpg');">
+        <div class="bg-overlay dark"></div>
+        <div class="container">
+            <h1 class="title">Search results for '{{q}}'</h1>
+        </div>
+    </div>
+
+    <div class="portfolio-page">
+
+        <!-- Main Content -->
+        <main id="main" class="main">
+        <br />
+        <br />
+        {% if ele|length > 0 %}
+            <center><h1>Matching products in Elephant Umbrellas:</h1></center>
+            <div class="portfolio-items-container row no-padding">
+                {% for i in ele %}
+                <div class="col-xs-6 col-md-4 col-lg-3" style="height: 5%;">
+                    <article class="portfolio-post-item">
+                        <img src="../static/media/{{ i.pic2 }}" alt="">
+                        <div class="portfolio-content-wrapper">
+                            <div class="portfolio-content">
+                                <h3 class="portfolio-title"><a href="portfolio-single.html">{{ i.fold }} {{ i.pattern }}</a></h3>
+                                <span class="portfolio-cat">{{ i.color }}</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        {% if koko|length > 0 %}
+            <center><h1>Matching products in KoKo Umbrellas:</h1></center>
+            <div class="portfolio-items-container row no-padding">
+                {% for i in koko %}
+                <div class="col-xs-6 col-md-4 col-lg-3" style="height: 5%;">
+                    <article class="portfolio-post-item">
+                        <img src="../static/media/{{ i.pic2 }}" alt="">
+                        <div class="portfolio-content-wrapper">
+                            <div class="portfolio-content">
+                                <h3 class="portfolio-title"><a href="portfolio-single.html">{{ i.fold }} {{ i.pattern }}</a></h3>
+                                <span class="portfolio-cat">{{ i.color }}</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        {% if ele|length == 0 %}
+        	{% if koko|length == 0 %}
+        		<h1>No Matching Products</h1>
+        	{% endif %}
+        {% endif %}
+        </main>
+    </div>
+
+{% endblock %}
